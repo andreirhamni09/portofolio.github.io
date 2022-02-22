@@ -6,3 +6,27 @@
 #skills {
     background-color: #95BCFF;
 }
+
+#project .card-img-top {
+    margin-top: 5%;
+    width: 90%;
+    height: 75%;
+    object-fit: cover;
+    background-color: aliceblue;
+}
+
+#project .card {
+    background-color: #95BCFF;
+}
+
+#project .card-header {
+    background-color: #CBDEFF;
+}
+
+#project .card-footer {
+    background-color: #CBDEFF;
+}
+
+#contact {
+    background-color: #95BCFF;
+}
