@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "name": "E-Laundry",
+    "description": "Sistem manajemen laundry komprehensif dengan arsitektur multi-database, RBAC, dan fitur manajemen logo dinamis",
+    "tech": ["Laravel 13", "PHP 8.3", "MySQL", "Bootstrap 5", "DataTables"],
+    "year": 2026,
+    "type": "Web Application",
+    "category": "Business Management",
+    "github": "https://github.com/andreseptio10-dotcom/e-laundry",
+    "image": "img/github.png"
+  },
+  {
+    "id": 2,
+    "name": "Note List",
+    "description": "Aplikasi full-stack modern untuk manajemen catatan dengan backend Laravel 13 dan frontend Next.js 15",
+    "tech": ["Laravel 13", "Next.js 15", "React 19", "TypeScript", "Tailwind CSS"],
+    "year": 2025,
+    "type": "Full-Stack Web Application",
+    "category": "Productivity",
+    "github": "https://github.com/andreirhamni09/frontend-note-list",
+    "image": "img/github.png"
+  },
+  {
+    "id": 3,
+    "name": "Convert Tulisan Tangan ke Komputer",
+    "description": "Aplikasi AI untuk mendeteksi dan mengkonversi tulisan tangan menjadi font komputer menggunakan OpenCV dan PaddleOCR",
+    "tech": ["Laravel 13", "Python", "OpenCV", "PaddleOCR", "Tailwind CSS"],
+    "year": 2026,
+    "type": "Web Application",
+    "category": "AI/ML",
+    "github": "",
+    "image": "img/github.png"
+  },
+  {
+    "id": 4,
+    "name": "Prompt AI",
+    "description": "Aplikasi generator prompt AI dengan antarmuka modern menggunakan Laravel 13 dan Vite",
+    "tech": ["Laravel 13", "PHP 8.3", "MySQL", "Vite", "Tailwind CSS 4"],
+    "year": 2026,
+    "type": "Web Application",
+    "category": "AI/ML",
+    "github": "",
+    "image": "img/github.png"
+  },
+  {
+    "id": 5,
+    "name": "Vismo Scheduler",
+    "description": "Platform scheduling dan reporting multi-database dengan backend Express.js dan frontend Vue.js",
+    "tech": ["Node.js", "Express.js", "Vue.js", "Chart.js", "MySQL/MSSQL"],
+    "year": 2022,
+    "type": "Full-Stack Web Application",
+    "category": "Scheduling/Reporting",
+    "github": "https://github.com/CKBITDev/vismo-scheduler",
+    "image": "img/github.png"
+  },
+  {
+    "id": 6,
+    "name": "IOT Weather Station",
+    "description": "Sistem monitoring untuk stasiun cuaca dengan fitur tracking parameter cuaca dan volume air",
+    "tech": ["Laravel", "PHP", "MySQL", "Bootstrap", "AdminLTE"],
+    "year": 2020,
+    "type": "Web Application",
+    "category": "IoT/Monitoring",
+    "github": "https://github.com/andreirhamni09/FileIot.git",
+    "image": "img/github.png"
+  },
+  {
+    "id": 7,
+    "name": "E-Card API & Web",
+    "description": "Platform e-Card dengan backend API dan portal web menggunakan Laravel 8 dengan QR code dan PDF generation",
+    "tech": ["Laravel 8", "PHP 7.3/8.0", "MySQL", "JWT Auth", "QR Code"],
+    "year": 2021,
+    "type": "Web Application / REST API",
+    "category": "Document Management",
+    "github": "https://github.com/CKBITDev/ecard-api-and-web",
+    "image": "img/github.png"
+  },
+  {
+    "id": 8,
+    "name": "E-Sign Procurement v1",
+    "description": "Aplikasi procurement dengan workflow persetujuan dan fitur export Excel/PDF",
+    "tech": ["Laravel 8", "PHP 7.3/8.0", "MySQL", "DataTables", "PDF Generation"],
+    "year": 2021,
+    "type": "Web Application",
+    "category": "Procurement",
+    "github": "https://github.com/CKBITDev/esign",
+    "image": "img/github.png"
+  },
+  {
+    "id": 9,
+    "name": "E-Sign Procurement v2",
+    "description": "Versi improved dari E-Sign dengan integrasi DataTables yang lebih baik dan fitur export yang lebih lengkap",
+    "tech": ["Laravel 8", "PHP 7.3/8.0", "MySQL", "DataTables Buttons", "Excel Export"],
+    "year": 2022,
+    "type": "Web Application",
+    "category": "Procurement",
+    "github": "https://github.com/CKBITDev/esign",
+    "image": "img/github.png"
+  },
+  {
+    "id": 10,
+    "name": "GIOMP API",
+    "description": "Gate In/Out Monitoring Platform API dengan fitur barcode scanning dan employee tracking",
+    "tech": ["Laravel 8", "PHP 7.3/8.0", "MySQL", "JWT Auth", "Barcode Generation"],
+    "year": 2021,
+    "type": "REST API",
+    "category": "Gate Management",
+    "github": "https://github.com/CKBITDev/giomp-api",
+    "image": "img/github.png"
+  },
+  {
+    "id": 11,
+    "name": "MobDAS",
+    "description": "Mobile Data Assessment System API dengan Docker support dan Jenkins integration",
+    "tech": ["Laravel 8", "PHP 7.3", "MySQL", "JWT Auth", "Docker"],
+    "year": 2021,
+    "type": "REST API / Backend Service",
+    "category": "Data Assessment",
+    "github": "https://github.com/CKBITDev/mobdas",
+    "image": "img/github.png"
+  },
+  {
+    "id": 12,
+    "name": "E-Card Android",
+    "description": "Aplikasi mobile Android untuk e-Card functionality dengan Firebase integration",
+    "tech": ["Android", "Java/Kotlin", "Firebase", "Gradle"],
+    "year": 2022,
+    "type": "Mobile Application",
+    "category": "Mobile",
+    "github": "https://github.com/CKBITDev/ecard-android",
+    "image": "img/github.png"
+  },
+  {
+    "id": 13,
+    "name": "Psikotes",
+    "description": "Website untuk melakukan tes psikotes untuk calon karyawan dengan scoring otomatis",
+    "tech": ["HTML", "Bootstrap", "JavaScript", "PHP", "MySQL"],
+    "year": 2020,
+    "type": "Web Application",
+    "category": "HR/Testing",
+    "github": "https://github.com/andreirhamni09/psikotest.git",
+    "image": "img/github.png"
+  },
+  {
+    "id": 14,
+    "name": "SmartLab",
+    "description": "Platform penerimaan jasa analisis sampel dengan fitur tracking hasil analisa secara online",
+    "tech": ["Laravel", "PHP", "MySQL", "Bootstrap", "AdminLTE"],
+    "year": 2020,
+    "type": "Web Application",
+    "category": "Laboratory Management",
+    "github": "https://github.com/andreirhamni09/Smartlab.git",
+    "image": "img/github.png"
+  },
+  {
+    "id": 15,
+    "name": "Kuesioner",
+    "description": "Sistem rekap review dan rating untuk pelanggan yang menggunakan jasa analisa lab",
+    "tech": ["HTML", "Bootstrap", "PHP", "MySQL"],
+    "year": 2020,
+    "type": "Web Application",
+    "category": "Survey/Feedback",
+    "github": "https://github.com/andreirhamni09/kuesioner.git",
+    "image": "img/github.png"
+  },
+  {
+    "id": 16,
+    "name": "Backup Database App",
+    "description": "Aplikasi untuk backup dan recovery database dengan fitur scheduling otomatis",
+    "tech": ["Laravel 8", "PHP 7.3", "MySQL", "Node.js", "Webpack"],
+    "year": 2020,
+    "type": "Utility Application",
+    "category": "Database Management",
+    "github": "",
+    "image": "img/github.png"
+  }
+]

@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Akhir  Bootstrap CSS-->
 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
     <link href="style/style.css" rel="stylesheet">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
@@ -36,7 +39,7 @@
                         <a class="nav-link" href="#project">Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -200,82 +203,11 @@
                     <h2>Project</h2>
                 </div>
             </div>
-            <div class="row justify-content-center mt-5">
-                <div class="col-sm-4 mb-2">
-                    <div class="card mx-auto" style="width: 15rem;">
-                        <div class="card-header">
-                            <h5 class="card-title">IOT</h5>
-                        </div>
-                        <img src="img/github.png" class="card-img-top mx-auto" alt="Projek">
-                        <div class="card-body">
-                            <p class="card-text">Iot adalah Website yang digunakan untuk melakukan Sistem monitoring untuk Stasiun Cuaca <abbr title=" dan Volume Air. Dibuat dengan menggunakan Framework Laravel, database Mysql, Bootstrap (AdminLte Template)">...</abbr>
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/andreirhamni09/FileIot.git" class="btn btn-primary">Lihat
-                                Github</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 mb-2">
-                    <div class="card mx-auto" style="width: 15rem;">
-                        <div class="card-header">
-                            <h5 class="card-title">Psikotes</h5>
-                        </div>
-                        <img src="img/github.png" class="card-img-top mx-auto" alt="Projek">
-                        <div class="card-body">
-                            <p class="card-text">Psikotes adalah Website yang dibuat untuk melakukan Tes Psikotes untuk
-                                <abbr title="Calon Karyawan Baru Untuk berbagai Jabatan. Website ini dibuat dengan menggunakan Html Bootstrap (AdminLte Template, Javascript, Php (Back-End), Mysql (Database))">...</abbr>
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/andreirhamni09/psikotest.git" class="btn btn-primary">Lihat
-                                Github</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4 mb-2">
-                    <div class="card mx-auto" style="width: 15rem;">
-                        <div class="card-header">
-                            <h5 class="card-title">Smartlab</h5>
-                        </div>
-                        <img src="img/github.png" class="card-img-top mx-auto" alt="Projek">
-                        <div class="card-body">
-                            <p class="card-text">Web ini dibuat untuk melakukan penerimaan jasa analisis Sampel <abbr title="yang ada dikebun dengan tujuan Agar pelangan yang melakukan order jasa analisis sampel dapat melakukan tracking hasil analisa sampel secara online. 
-                                Sistem dibuat menggunakan Html Bootstrap (AdminLte Template), Javascript, Framework Laravel (Back-end|API), Mysql (Database)">...</abbr>
-                                </abbr>
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/andreirhamni09/Smartlab.git" class="btn btn-primary">Lihat
-                                Github</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="row" id="projectsContainer">
+                <!-- Projects loaded dynamically from data/projects.json -->
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="card mx-auto" style="width: 15rem;">
-                        <div class="card-header">
-                            <h5 class="card-title">Kuesioner</h5>
-                        </div>
-                        <img src="img/github.png" class="card-img-top mx-auto" alt="Projek">
-                        <div class="card-body">
-                            <p class="card-text">Website ini dibuat untuk melakukan rekap terdapat pemberian review
-                                <abbr title="yang menggunakan jasa analisa sampel di Lab dimana sistem akan melakukan rekap terhadap saran dan pemberian rating terhadap pelayanan yang diberikan
-                                sistem dibuat dengan menggunakan HTML Bootstrap (AdminLte Template), PHP (Backend), Mysql (Database)">...</abbr>
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="https://github.com/andreirhamni09/kuesioner.git" class="btn btn-primary">Lihat
-                                Github</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#95BCFF" fill-opacity="1" d="M0,256L24,229.3C48,203,96,149,144,133.3C192,117,240,139,288,149.3C336,160,384,160,432,165.3C480,171,528,181,576,186.7C624,192,672,192,720,170.7C768,149,816,107,864,101.3C912,96,960,128,1008,117.3C1056,107,1104,53,1152,53.3C1200,53,1248,107,1296,144C1344,181,1392,203,1416,213.3L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#667eea" fill-opacity="0.1" d="M0,256L24,229.3C48,203,96,149,144,133.3C192,117,240,139,288,149.3C336,160,384,160,432,165.3C480,171,528,181,576,186.7C624,192,672,192,720,170.7C768,149,816,107,864,101.3C912,96,960,128,1008,117.3C1056,107,1104,53,1152,53.3C1200,53,1248,107,1296,144C1344,181,1392,203,1416,213.3L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path></svg>
     </section>
     <!-- Akhir Project -->
 
@@ -287,22 +219,28 @@
                     <h2>Contact</h2>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h5>Whatsapp</h5>
-                    <img src="img/wa.png" alt="Andre Septio Irhamni Wicaksana" width="200" class="rounded-circle img-thumbnail" />
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 text-center mb-4">
+                    <h5>
+                        <i class="bi bi-telephone"></i> WhatsApp / Telepon
+                    </h5>
+                    <img src="img/wa.png" alt="WhatsApp" width="150" class="rounded-circle img-thumbnail" />
                     <br>
-                    <a href="https://wa.me/+6281522875817" class="btn btn-primary mt-2 mb-2">+62815-2287-5817</a>
+                    <a href="tel:+6281931423907" class="btn btn-primary mt-3">
+                        <i class="bi bi-telephone"></i> +62 819-3142-3907
+                    </a>
                 </div>
-                <div class="col-md-6 text-center">
-                    <h5>Gmail</h5>
-                    <img src="img/gmail.png" alt="Andre Septio Irhamni Wicaksana" width="200" class="rounded-circle img-thumbnail" />
+                <div class="col-md-6 text-center mb-4">
+                    <h5>
+                        <i class="bi bi-envelope"></i> Email
+                    </h5>
+                    <img src="img/gmail.png" alt="Email" width="150" class="rounded-circle img-thumbnail" />
                     <br>
-
-                    <a onclick="myFunction3()" id="gmail" class="btn btn-primary mt-2 mb-2">andreirhamni09@gmail.com</a>
+                    <a href="mailto:andreseptio10@gmail.com" class="btn btn-primary mt-3">
+                        <i class="bi bi-envelope"></i> andreseptio10@gmail.com
+                    </a>
                 </div>
             </div>
-        </div>
         </div>
     </section>
     <!-- Akhir Contact -->
@@ -312,6 +250,9 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    <!-- Portfolio Dynamic Rendering Script -->
+    <script src="js/portfolio.js"></script>
+
     <script>
         function myFunction3() {
             let text = document.getElementById("gmail").textContent;
@@ -320,10 +261,6 @@
             alert(pesan);
         }
     </script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> -->
 
 </body>
 
