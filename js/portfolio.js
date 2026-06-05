@@ -1,4 +1,5 @@
 // Portfolio Dynamic Renderer
+
 async function loadProjects() {
     try {
         const response = await fetch('data/projects.json');
@@ -20,10 +21,9 @@ function escapeHtml(str) {
 
 function renderProjects(projects) {
     const projectContainer = document.getElementById('projectsContainer');
-
     if (!projectContainer) return;
 
-    const html = projects.map((project, index) => {
+    const html = (Array.isArray(projects) ? projects : []).map((project, index) => {
         const name = escapeHtml(project.name ?? 'Untitled');
         const year = escapeHtml(project.year ?? '');
         const category = escapeHtml(project.category ?? '');
@@ -41,7 +41,6 @@ function renderProjects(projects) {
             ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open ${name} repository on GitHub">Repository</a>`
             : `<span class="service-badge" aria-label="Repository not available">Private</span>`;
 
-        // Demo link tidak ada pada projects.json saat ini, jadi hanya tampilkan repository.
         return `
             <article class="project-card fade-in" style="animation-delay: ${index * 0.08}s" aria-label="Project: ${name}">
                 <div class="project-image">
@@ -68,19 +67,85 @@ function renderProjects(projects) {
     projectContainer.innerHTML = html.join('');
 }
 
+async function loadRecognitions() {
+    try {
+        const response = await fetch('data/recognitions.json');
+        const items = await response.json();
+        renderRecognitions(items);
+    } catch (error) {
+        console.error('Error loading recognitions:', error);
+    }
+}
+
+function formatRecognitionPeriod(start, end) {
+    const s = start ? String(start) : '';
+    const e = end ? String(end) : '';
+    if (!s && !e) return '';
+    if (s && e) return `${s} - ${e}`;
+    return s || e;
+}
+
+function renderRecognitions(items) {
+    const container = document.getElementById('recognitionsContainer');
+    if (!container) return;
+
+    const safeItems = Array.isArray(items) ? items : [];
+
+    const html = safeItems
+        .map((item, index) => {
+            const type = item?.type ?? 'experience';
+
+            if (type === 'note') {
+                const title = escapeHtml(item.title ?? '');
+                const text = escapeHtml(item.text ?? '');
+                if (!title && !text) return '';
+
+                return `
+                    <article class="recognition-card fade-in" style="animation-delay: ${index * 0.06}s">
+                        <div class="recognition-body">
+                            ${title ? `<h4 class="recognition-title">${title}</h4>` : ''}
+                            ${text ? `<p class="recognition-text">${text}</p>` : ''}
+                        </div>
+                    </article>
+                `;
+            }
+
+            const company = escapeHtml(item.company ?? '');
+            const role = escapeHtml(item.role ?? 'Software Engineer');
+            const period = formatRecognitionPeriod(item.start, item.end);
+
+            if (!company && !role && !period) return '';
+
+            return `
+                <article class="recognition-card fade-in" style="animation-delay: ${index * 0.06}s">
+                    <div class="recognition-meta">
+                        <h4 class="recognition-company">${company}</h4>
+                        <div class="recognition-role">${role}</div>
+                    </div>
+                    ${period ? `<div class="recognition-period">${period}</div>` : ''}
+                </article>
+            `;
+        })
+        .filter(Boolean);
+
+    container.innerHTML = html.join('');
+}
 
 // Initialize on page load
-document.addEventListener('DOMContentLoaded', loadProjects);
+document.addEventListener('DOMContentLoaded', () => {
+    loadProjects();
+    loadRecognitions();
+});
 
 // Smooth scroll navigation
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
                 behavior: 'smooth',
-                block: 'start'
+                block: 'start',
             });
         }
     });
@@ -89,11 +154,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Add scroll animation for elements
 const observerOptions = {
     threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    rootMargin: '0px 0px -50px 0px',
 };
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
+const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('is-visible');
         }
@@ -103,3 +168,4 @@ const observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.fade-in, .project-card, .slide-in').forEach((el) => {
     observer.observe(el);
 });
+
