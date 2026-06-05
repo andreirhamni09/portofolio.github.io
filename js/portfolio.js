@@ -9,47 +9,65 @@ async function loadProjects() {
     }
 }
 
+function escapeHtml(str) {
+    return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '<')
+        .replaceAll('>', '>')
+        .replaceAll('"', '"')
+        .replaceAll("'", '&#039;');
+}
+
 function renderProjects(projects) {
     const projectContainer = document.getElementById('projectsContainer');
-    let html = '';
 
-    projects.forEach((project, index) => {
-        const techStack = project.tech.map(t => `<span class="tech-badge">${t}</span>`).join('');
-        const githubLink = project.github 
-            ? `<a href="${project.github}" target="_blank" class="btn btn-primary btn-sm">
-                <i class="bi bi-github"></i> Lihat Github
-              </a>`
-            : '<span class="btn btn-secondary btn-sm disabled">Private</span>';
+    if (!projectContainer) return;
 
-        html += `
-            <div class="col-lg-4 col-md-6 mb-4 fade-in" style="animation-delay: ${index * 0.1}s;">
-                <div class="card project-card h-100">
-                    <div class="card-header">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div>
-                                <h5 class="card-title mb-1">${project.name}</h5>
-                                <small class="text-muted">${project.year}</small>
-                            </div>
-                            <span class="badge bg-info">${project.category}</span>
-                        </div>
-                    </div>
-                    <img src="${project.image}" class="card-img-top mx-auto" alt="${project.name}">
-                    <div class="card-body">
-                        <p class="card-text">${project.description}</p>
-                        <div class="tech-stack">
-                            ${techStack}
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        ${githubLink}
-                    </div>
+    const html = projects.map((project, index) => {
+        const name = escapeHtml(project.name ?? 'Untitled');
+        const year = escapeHtml(project.year ?? '');
+        const category = escapeHtml(project.category ?? '');
+        const description = escapeHtml(project.description ?? '');
+
+        const image = escapeHtml(project.image ?? '');
+
+        const techStack = Array.isArray(project.tech) ? project.tech : [];
+        const techBadges = techStack
+            .map((t) => `<span class="service-badge">${escapeHtml(t)}</span>`)
+            .join('');
+
+        const hasGithub = Boolean(project.github && String(project.github).trim());
+        const githubLink = hasGithub
+            ? `<a href="${escapeHtml(project.github)}" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Open ${name} repository on GitHub">Repository</a>`
+            : `<span class="service-badge" aria-label="Repository not available">Private</span>`;
+
+        // Demo link tidak ada pada projects.json saat ini, jadi hanya tampilkan repository.
+        return `
+            <article class="project-card fade-in" style="animation-delay: ${index * 0.08}s" aria-label="Project: ${name}">
+                <div class="project-image">
+                    ${image ? `<img src="${image}" loading="lazy" decoding="async" alt="${name} thumbnail">` : ''}
                 </div>
-            </div>
+
+                <div class="project-content">
+                    <div class="project-meta">
+                        <h3 class="project-title">${name}</h3>
+                        ${year ? `<div class="project-year">${year}</div>` : ''}
+                        ${category ? `<div class="project-category">${category}</div>` : ''}
+                    </div>
+
+                    <p class="project-description">${description}</p>
+
+                    <div class="project-services" aria-label="Tech stack">${techBadges}</div>
+
+                    <div class="project-links">${githubLink}</div>
+                </div>
+            </article>
         `;
     });
 
-    projectContainer.innerHTML = html;
+    projectContainer.innerHTML = html.join('');
 }
+
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', loadProjects);
@@ -82,6 +100,6 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-document.querySelectorAll('.fade-in, .slide-in').forEach(el => {
+document.querySelectorAll('.fade-in, .project-card, .slide-in').forEach((el) => {
     observer.observe(el);
 });
